@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.hit.ui.DeleteBookController"
+      spacing="20"
+      alignment="CENTER"
+      prefWidth="600"
+      prefHeight="450">
+
+
+    <Label text="🗑 Delete Book"
+           styleClass="screen-title"/>
+
+
+    <TextField fx:id="txtId"
+               promptText="Enter Book ID"/>
+
+
+    <Button text="Delete Book"
+            prefWidth="220"
+            prefHeight="40"
+            onAction="#deleteBook"/>
+
+
+    <Label fx:id="resultLabel"
+           styleClass="result-label"/>
+
+    <Button text="⬅ Back to Menu"
+            styleClass="back-button"
+            prefWidth="220"
+            prefHeight="40"
+            onAction="#backToMenu"/>
+
+</VBox>

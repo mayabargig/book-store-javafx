@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.hit.ui.SearchBookController"
+      spacing="20"
+      alignment="CENTER"
+      prefWidth="600"
+      prefHeight="450">
+
+
+    <Label text="🔍 Search Book"
+           styleClass="screen-title"/>
+
+
+    <TextField fx:id="txtSearch"
+               promptText="Enter book name"/>
+
+
+    <ComboBox fx:id="algorithmBox"
+              promptText="Choose Search Algorithm"/>
+
+
+    <Button text="Search"
+            prefWidth="220"
+            prefHeight="40"
+            onAction="#searchBook"/>
+
+
+    <Label fx:id="resultLabel"
+           styleClass="result-label"/>
+
+    <Button text="⬅ Back to Menu"
+            styleClass="back-button"
+            prefWidth="220"
+            prefHeight="40"
+            onAction="#backToMenu"/>
+
+</VBox>
