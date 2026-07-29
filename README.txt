@@ -1,4 +1,4 @@
-# 📚 Book Store Management System
+# 📚 Book Store Management System#
 
 A Java desktop application built with a Client-Server architecture for managing a bookstore. The project demonstrates object-oriented programming principles, layered architecture, socket communication, and JavaFX for the graphical user interface.
 
