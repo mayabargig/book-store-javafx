@@ -31,11 +31,18 @@ The system allows users to manage books and customers independently through dedi
 - View all customers
 
 ### 🌐 Client–Server Communication
-- Socket-based communication
-- Multi-threaded server architecture
-- Independent Book Server
-- Independent Customer Server
+- TCP Socket communication
+- Two independent ServerSocket services
+- Book Server (Port 34567)
+- Customer Server (Port 34568)
+- Multi-threaded request handling
 
+## 🏛️ Design Patterns
+- DAO Pattern
+- Factory Pattern (Algorithm Factory)
+- Layered Architecture
+- Generic Interface (IDAO<T>)
+  
 ### 💾 Data Persistence
 - Generic DAO interface
 - File-based persistence
@@ -61,21 +68,31 @@ The system allows users to manage books and customers independently through dedi
 ## 🏗️ System Architecture
 
 ```text
-                   JavaFX Client
-                          │
-              ┌───────────┴───────────┐
-              │                       │
-      Book Server               Customer Server
-      (Port 34567)              (Port 34568)
-              │                       │
-       BookController         CustomerController
-              │                       │
-        BookService           CustomerService
-              │                       │
-       BookFileImpl          CustomerFileImpl
-               \             /
-                \           /
-                 DataSource.txt
+                JavaFX Client
+        │
+ TCP Socket Communication
+        │
+ ┌───────────────┬───────────────┐
+ │                               │
+ ▼                               ▼
+Book Server                 Customer Server
+Port 34567                  Port 34568
+ │                               │
+ ▼                               ▼
+BookController           CustomerController
+ │                               │
+ ▼                               ▼
+BookService              CustomerService
+ │                               │
+ ▼                               ▼
+BookFileImpl             CustomerFileImpl
+      \                   /
+       \                 /
+        ▼               ▼
+        IDAO<T>
+            │
+            ▼
+      DataSource.txt
 ```
 
 ---
