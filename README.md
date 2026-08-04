@@ -1,52 +1,56 @@
 # 📚 Book Store Management System
 
-> A multi-server Java desktop application that simulates a bookstore management system using Client-Server architecture, JavaFX, Socket Programming, and the DAO design pattern.
+> A multi-server Java desktop application that simulates a bookstore management system using JavaFX, TCP Socket Programming, Client-Server architecture, and the DAO design pattern.
 
 ---
 
 ## 🚀 Overview
 
-The Book Store Management System is a Java desktop application developed as part of a Computer Science project.
+The **Book Store Management System** is a Java desktop application developed as part of a Computer Science project.
 
-The application follows a layered architecture and demonstrates communication between a JavaFX client and multiple socket-based servers.
+The application follows a **layered architecture** and demonstrates communication between a JavaFX client and two independent socket-based servers.
 
-The system allows users to manage books and customers independently through dedicated services while persisting data locally using the DAO pattern.
+The system allows users to manage books and customers independently while persisting data locally using a generic DAO interface.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
 ### 📖 Book Management
-- Add new books
-- Update existing books
-- Delete books
-- Search books using multiple algorithms
-- View all books
+- ➕ Add new books
+- ✏️ Update existing books
+- 🔍 Search books using multiple search algorithms
+- 📚 Display all books
+- 🗑 Delete books
 
 ### 👤 Customer Management
-- Add customers
-- Update customer information
-- Delete customers
-- Retrieve customer by ID
-- View all customers
+- ➕ Add new customers
+- ✏️ Update customer information
+- 🔍 Search customers by ID
+- 👥 Display all customers
+- 🗑 Delete customers
 
 ### 🌐 Client–Server Communication
 - TCP Socket communication
 - Two independent ServerSocket services
-- Book Server (Port 34567)
-- Customer Server (Port 34568)
+- Book Server (Port **34567**)
+- Customer Server (Port **34568**)
 - Multi-threaded request handling
 
+### 💾 Data Persistence
+- Generic `IDAO<T>` interface
+- DAO design pattern
+- File-based persistence
+- Shared `DataSource.txt` storage
+
+---
+
 ## 🏛️ Design Patterns
+
 - DAO Pattern
 - Factory Pattern (Algorithm Factory)
 - Layered Architecture
-- Generic Interface (IDAO<T>)
-  
-### 💾 Data Persistence
-- Generic DAO interface
-- File-based persistence
-- Shared DataSource.txt storage
+- Generic Interface (`IDAO<T>`)
 
 ---
 
@@ -57,9 +61,9 @@ The system allows users to manage books and customers independently through dedi
 | Language | Java |
 | GUI | JavaFX |
 | Build Tool | Maven |
-| Networking | Java Sockets |
-| Architecture | Client-Server |
-| Design Pattern | DAO |
+| Networking | TCP Sockets |
+| Architecture | Client–Server |
+| Design Pattern | DAO, Factory |
 | Concurrency | Multithreading |
 | Version Control | Git & GitHub |
 
@@ -68,31 +72,31 @@ The system allows users to manage books and customers independently through dedi
 ## 🏗️ System Architecture
 
 ```text
-                JavaFX Client
-        │
- TCP Socket Communication
-        │
- ┌───────────────┬───────────────┐
- │                               │
- ▼                               ▼
-Book Server                 Customer Server
-Port 34567                  Port 34568
- │                               │
- ▼                               ▼
-BookController           CustomerController
- │                               │
- ▼                               ▼
-BookService              CustomerService
- │                               │
- ▼                               ▼
-BookFileImpl             CustomerFileImpl
-      \                   /
-       \                 /
-        ▼               ▼
-        IDAO<T>
-            │
-            ▼
-      DataSource.txt
+                     JavaFX Client
+                            │
+                TCP Socket Communication
+                            │
+             ┌──────────────┴──────────────┐
+             │                             │
+             ▼                             ▼
+      Book Server                    Customer Server
+      Port 34567                     Port 34568
+             │                             │
+             ▼                             ▼
+      BookController              CustomerController
+             │                             │
+             ▼                             ▼
+       BookService                 CustomerService
+             │                             │
+             ▼                             ▼
+      BookFileImpl                CustomerFileImpl
+               \                  /
+                \                /
+                 ▼              ▼
+                  IDAO<T>
+                     │
+                     ▼
+               DataSource.txt
 ```
 
 ---
@@ -115,29 +119,49 @@ src
 │   ├── controllers
 │   ├── dao
 │   ├── service
-│   ├── BookServer
-│   └── CustomerServer
+│   ├── BookServer.java
+│   ├── CustomerServer.java
+│   └── ServerDriver.java
 │
 └── ui
 ```
 
 ---
 
+## 🔎 Search Algorithms
+
+The application allows users to choose between two search algorithms:
+
+- **Dynamic Programming (LCS)** – Finds the longest common subsequence between the search text and the book title, providing more flexible matching.
+- **Naive Search** – Performs a straightforward comparison between the search text and the stored book titles.
+
+The selected algorithm is created using the **Algorithm Factory** pattern.
+
+---
+
 ## 📸 Application Screenshots
 
-### Main Menu
+### 🏠 Main Menu
 
 *(Add screenshot here)*
 
-### Add Book
+### 📚 Book Management
 
 *(Add screenshot here)*
 
-### Search Book
+### 👤 Customer Management
 
 *(Add screenshot here)*
 
-### Show All Books
+### ➕ Add Book
+
+*(Add screenshot here)*
+
+### 🔍 Search Book
+
+*(Add screenshot here)*
+
+### 👥 Show All Customers
 
 *(Add screenshot here)*
 
@@ -153,22 +177,22 @@ git clone https://github.com/mayabargig/book-store-javafx.git
 
 ### 2. Open the project
 
-Open the project using IntelliJ IDEA.
+Open the project using **IntelliJ IDEA**.
 
 ### 3. Start the servers
 
 Run:
 
-- ServerDriver
+- `ServerDriver`
 
-The application starts:
+This starts:
 
-- 📚 Book Server (Port 34567)
-- 👤 Customer Server (Port 34568)
+- 📚 Book Server (Port **34567**)
+- 👤 Customer Server (Port **34568**)
 
-### 4. Run the JavaFX Client
+### 4. Launch the JavaFX Client
 
-Launch the JavaFX application.
+Run the JavaFX application and access both **Book Management** and **Customer Management** modules.
 
 ---
 
@@ -177,11 +201,12 @@ Launch the JavaFX application.
 This project demonstrates practical implementation of:
 
 - Object-Oriented Programming (OOP)
-- Client-Server Architecture
-- Java Socket Programming
+- Client–Server Architecture
+- TCP Socket Programming
 - JavaFX GUI Development
 - Layered Software Architecture
 - DAO Design Pattern
+- Factory Design Pattern
 - Generic Interfaces
 - File Persistence
 - Multi-threaded Servers
