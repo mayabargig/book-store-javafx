@@ -7,23 +7,39 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainController {
+public class BookMenuController {
 
     @FXML
-    private void openBookManagement(ActionEvent event) {
-        openScene(
-                event,
-                "BookMenu.fxml",
-                "Book Management"
-        );
+    private void openAddBook(ActionEvent event) {
+        openScene(event, "AddBook.fxml", "Add Book");
     }
 
     @FXML
-    private void openCustomerManagement(ActionEvent event) {
+    private void openUpdateBook(ActionEvent event) {
+        openScene(event, "UpdateBook.fxml", "Update Book");
+    }
+
+    @FXML
+    private void openSearchBook(ActionEvent event) {
+        openScene(event, "SearchBook.fxml", "Search Book");
+    }
+
+    @FXML
+    private void openShowAllBooks(ActionEvent event) {
+        openScene(event, "ShowBooks.fxml", "All Books");
+    }
+
+    @FXML
+    private void openDeleteBook(ActionEvent event) {
+        openScene(event, "DeleteBook.fxml", "Delete Book");
+    }
+
+    @FXML
+    private void backToMainMenu(ActionEvent event) {
         openScene(
                 event,
-                "CustomerMenu.fxml",
-                "Customer Management"
+                "Main.fxml",
+                "Book Store Management System"
         );
     }
 

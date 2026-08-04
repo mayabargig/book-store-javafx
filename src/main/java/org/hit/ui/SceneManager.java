@@ -11,23 +11,17 @@ public class SceneManager {
     public static Scene loadScene(String file) throws IOException {
 
         Parent root = FXMLLoader.load(
-                SceneManager.class.getResource("/org/hit/ui/" + file)
+                SceneManager.class.getResource(
+                        "/org/hit/ui/" + file
+                )
         );
 
-        Scene scene = new Scene(root, 600, 450);
-
-        scene.getStylesheets().add(
-                SceneManager.class
-                        .getResource("/org/hit/ui/style.css")
-                        .toExternalForm()
-        );
-
-        return scene;
+        return createScene(root);
     }
 
     public static Scene createScene(Parent root) {
 
-        Scene scene = new Scene(root, 600, 450);
+        Scene scene = new Scene(root, 700, 520);
 
         scene.getStylesheets().add(
                 SceneManager.class

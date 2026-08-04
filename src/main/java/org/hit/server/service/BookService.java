@@ -14,10 +14,28 @@ public class BookService {
 
     public Response addBook(Object obj) {
 
-        Book book = (Book) obj;
-        dao.save(book);
+        if (!(obj instanceof Book)) {
+            return new Response(
+                    "ERROR",
+                    "Invalid book data"
+            );
+        }
 
-        return new Response("OK", "Book added");
+        Book book = (Book) obj;
+
+        boolean saved = dao.save(book);
+
+        if (saved) {
+            return new Response(
+                    "OK",
+                    "Book added successfully"
+            );
+        }
+
+        return new Response(
+                "ERROR",
+                "Book could not be added. ID may already exist"
+        );
     }
 
     public Response deleteBook(Object obj) {
@@ -84,5 +102,31 @@ public class BookService {
 
 
         return new Response("OK", best);
+    }
+
+    public Response updateBook(Object obj) {
+
+        if (!(obj instanceof Book)) {
+            return new Response(
+                    "ERROR",
+                    "Invalid book data"
+            );
+        }
+
+        Book book = (Book) obj;
+
+        boolean updated = dao.update(book);
+
+        if (updated) {
+            return new Response(
+                    "OK",
+                    "Book updated successfully"
+            );
+        }
+
+        return new Response(
+                "ERROR",
+                "Book not found"
+        );
     }
 }

@@ -91,3 +91,64 @@
 .back-button:hover {
     -fx-background-color: #7F8C8D;
 }
+
+.main-container {
+    -fx-padding: 30;
+}
+
+.subtitle {
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6C7A89;
+}
+
+.section-title {
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.menu-card {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: #D5E1EC;
+    -fx-padding: 22;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0, 0, 0, 0.10),
+            12,
+            0.1,
+            0,
+            4
+    );
+}
+
+.menu-icon {
+    -fx-font-size: 48px;
+}
+
+.card-description {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6C7A89;
+}
+
+.result-card {
+    -fx-background-color: rgba(255, 255, 255, 0.80);
+    -fx-border-color: #D5E1EC;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-min-width: 350;
+    -fx-min-height: 90;
+}
+
+.delete-button {
+    -fx-background-color: #C94C4C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.delete-button:hover {
+    -fx-background-color: #A93C3C;
+}

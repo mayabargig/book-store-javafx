@@ -6,28 +6,55 @@ import org.hit.server.service.CustomerService;
 
 public class CustomerController {
 
-    private CustomerService service = new CustomerService();
+    private final CustomerService service;
+
+    public CustomerController() {
+        this.service = new CustomerService();
+    }
 
     public Response handle(Request request) {
+
+        if (request == null || request.getAction() == null) {
+
+            return new Response(
+                    "ERROR",
+                    "Invalid customer request"
+            );
+        }
 
         String action = request.getAction();
 
         switch (action) {
 
             case "customer/add":
-                return service.addCustomer(request.getData());
+                return service.addCustomer(
+                        request.getData()
+                );
+
+            case "customer/update":
+                return service.updateCustomer(
+                        request.getData()
+                );
 
             case "customer/delete":
-                return service.deleteCustomer(request.getData());
+                return service.deleteCustomer(
+                        request.getData()
+                );
 
             case "customer/get":
-                return service.getCustomer(request.getData());
+                return service.getCustomer(
+                        request.getData()
+                );
 
             case "customer/getAll":
                 return service.getAllCustomers();
 
             default:
-                return new Response("ERROR", "Unknown customer action");
+
+                return new Response(
+                        "ERROR",
+                        "Unknown customer action"
+                );
         }
     }
 }

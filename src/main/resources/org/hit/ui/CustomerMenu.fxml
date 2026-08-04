@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.hit.ui.CustomerMenuController"
+      alignment="CENTER"
+      spacing="16"
+      prefWidth="700"
+      prefHeight="520">
+
+    <Label text="👤 Customer Management"
+           styleClass="screen-title"/>
+
+    <Label text="Choose an action"
+           styleClass="subtitle"/>
+
+    <Button text="➕ Add Customer"
+            prefWidth="250"
+            prefHeight="42"
+            onAction="#openAddCustomer"/>
+
+    <Button text="✏️ Update Customer"
+            prefWidth="250"
+            prefHeight="42"
+            onAction="#openUpdateCustomer"/>
+
+    <Button text="🔍 Search Customer"
+            prefWidth="250"
+            prefHeight="42"
+            onAction="#openSearchCustomer"/>
+
+    <Button text="👥 Show All Customers"
+            prefWidth="250"
+            prefHeight="42"
+            onAction="#openShowAllCustomers"/>
+
+    <Button text="🗑 Delete Customer"
+            prefWidth="250"
+            prefHeight="42"
+            onAction="#openDeleteCustomer"/>
+
+    <Button text="⬅ Back to Main Menu"
+            prefWidth="250"
+            prefHeight="42"
+            styleClass="back-button"
+            onAction="#backToMainMenu"/>
+
+</VBox>

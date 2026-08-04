@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.hit.ui.UpdateCustomerController"
+      alignment="CENTER"
+      spacing="18"
+      prefWidth="700"
+      prefHeight="520">
+
+    <Label text="✏️ Update Customer"
+           styleClass="screen-title"/>
+
+    <Label text="Update customer information"
+           styleClass="subtitle"/>
+
+    <TextField fx:id="txtId"
+               promptText="Customer ID"/>
+
+    <TextField fx:id="txtName"
+               promptText="Customer Name"/>
+
+    <TextField fx:id="txtEmail"
+               promptText="Customer Email"/>
+
+    <Button text="Update Customer"
+            prefWidth="220"
+            prefHeight="40"
+            onAction="#updateCustomer"/>
+
+    <Label fx:id="resultLabel"
+           styleClass="result-label"/>
+
+    <Button text="⬅ Back to Menu"
+            styleClass="back-button"
+            prefWidth="220"
+            prefHeight="40"
+            onAction="#backToMenu"/>
+
+</VBox>

@@ -1,36 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox xmlns="http://javafx.com/javafx"
-      fx:controller="org.hit.ui.MainController"
       xmlns:fx="http://javafx.com/fxml"
-      spacing="20"
+      fx:controller="org.hit.ui.MainController"
       alignment="CENTER"
-      prefWidth="600"
-      prefHeight="450">
-    <Label text="📚 Book Store System"
+      spacing="30"
+      prefWidth="700"
+      prefHeight="520"
+      styleClass="main-container">
+
+    <Label text="📚 Book Store Management System"
            styleClass="title"/>
 
-    <Button text="Add Book"
-            prefWidth="220"
-            prefHeight="40"
-            onAction="#handleAdd"/>
+    <Label text="Choose a management area"
+           styleClass="subtitle"/>
 
-    <Button text="Search Book"
-            prefWidth="220"
-            prefHeight="40"
-            onAction="#handleSearch"/>
+    <HBox alignment="CENTER"
+          spacing="35">
 
-    <Button text="Show All Books"
-            prefWidth="220"
-            prefHeight="40"
-            onAction="#handleShowAll"/>
+        <VBox alignment="CENTER"
+              spacing="18"
+              styleClass="menu-card">
 
-    <Button text="Delete Book"
-            prefWidth="220"
-            prefHeight="40"
-            onAction="#handleDelete"/>
+            <Label text="📖"
+                   styleClass="menu-icon"/>
+
+            <Label text="Book Management"
+                   styleClass="section-title"/>
+
+            <Label text="Manage the bookstore catalog"
+                   styleClass="card-description"/>
+
+            <Button text="Open Book Management"
+                    prefWidth="230"
+                    prefHeight="45"
+                    onAction="#openBookManagement"/>
+
+        </VBox>
+
+        <VBox alignment="CENTER"
+              spacing="18"
+              styleClass="menu-card">
+
+            <Label text="👤"
+                   styleClass="menu-icon"/>
+
+            <Label text="Customer Management"
+                   styleClass="section-title"/>
+
+            <Label text="Manage bookstore customers"
+                   styleClass="card-description"/>
+
+            <Button text="Open Customer Management"
+                    prefWidth="230"
+                    prefHeight="45"
+                    onAction="#openCustomerManagement"/>
+
+        </VBox>
+
+    </HBox>
 
 </VBox>

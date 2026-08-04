@@ -1,0 +1,9 @@
+BOOK|101|Harry Potter and the Philosopher's Stone
+BOOK|102|The Hobbit
+BOOK|103|Clean Code
+BOOK|104|Design Patterns
+BOOK|105|Introduction to Algorithms
+
+CUSTOMER|201|Maya Bargig|maya@example.com
+CUSTOMER|202|Daniel Cohen|daniel@example.com
+CUSTOMER|203|Sarah Levi|sarah@example.com
